@@ -232,8 +232,67 @@ div > p {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เมนูเว็บไซต์</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item active">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
+]
 ```
+```css
+/* การใช้ Element Selector */
+nav {
+    background-color: #444; /* เปลี่ยนสีพื้นหลังเมนู */
+    padding: 15px;
+}
+
+/* การใช้ Descendant Selector */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* การใช้ Child Selector */
+nav > ul > li {
+    margin: 0 10px;
+}
+
+/* การใช้ Class Selector */
+.menu-item {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+/* การใช้ Pseudo-class */
+.menu-item:hover {
+    background-color: #666;
+    border-radius: 3px;
+}
+
+/* การใช้ Active Class */
+.active {
+    background-color: #007bff;
+    border-radius: 3px;
+}
+```
+
  ![คำอธิบายรูป](![Screenshot 2025-02-11 132557](https://github.com/user-attachments/assets/021f97a4-8eb1-4d06-a504-322a41ea6141)
 
 )

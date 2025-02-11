@@ -234,7 +234,7 @@ div > p {
 ```html
 [วางโค้ดที่นี่]
 ```
- ![คำอธิบายรูป](![image](https://github.com/user-attachments/assets/add1b437-4d57-4421-b539-e276a07f7291)
+ ![คำอธิบายรูป]([![image](https://github.com/user-attachments/assets/656df3d0-adb4-4b91-bc43-ef969ea0df13)
 )
 
 

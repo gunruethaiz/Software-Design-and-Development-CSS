@@ -1370,10 +1370,233 @@ body {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แดชบอร์ด</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>แดชบอร์ด</h1>
+            <nav>
+                <button class="btn-profile">โปรไฟล์</button>
+                <button class="btn-logout">ออกจากระบบ</button>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">หน้าแรก</a></li>
+                    <li><a href="#">รายงาน</a></li>
+                    <li><a href="#">การตั้งค่า</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>ยอดขายรวม</h3>
+                    <p class="amount">฿150,000</p>
+                </div>
+                <div class="stat-card">
+                    <h3>จำนวนออเดอร์</h3>
+                    <p class="amount">1,234</p>
+                </div>
+                <div class="stat-card">
+                    <h3>ลูกค้าใหม่</h3>
+                    <p class="amount">45</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart">
+                    <h3>กราฟแสดงยอดขาย</h3>
+                    <!-- เพิ่มกราฟตามต้องการ -->
+                </div>
+                <div class="chart">
+                    <h3>สัดส่วนสินค้าขายดี</h3>
+                    <!-- เพิ่มกราฟตามต้องการ -->
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    color: #4d3141;
+    line-height: 1.6;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    gap: 1rem;
+}
+
+.header {
+    grid-area: header;
+    background: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: #58374d;
+    font-weight: 500;
+}
+
+nav button {
+    background-color: #fca1e5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+}
+
+nav button:hover {
+    background-color: #f39ae4;
+    transform: translateY(-2px);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    grid-area: sidebar;
+    background: #f5acd4;
+    color: white;
+    padding: 2rem;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 1.2rem;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    display: block;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #fa5ad2;
+    border-radius: 4px;
+}
+
+/* Main Content Area */
+.main-content {
+    grid-area: main;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 1.4rem;
+    color: #1f0513;
+    margin-bottom: 1rem;
+}
+
+.stat-card .amount {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #c20e7d;
+}
+
+/* Chart Section */
+.chart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.chart {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-areas: 
+            "header"
+            "main";
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .chart-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+}
+
 ```
-[บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+  ![คำอธิบายรูป](![Screen-Recording-2025-02-11-151330](https://github.com/user-attachments/assets/bd382724-8a37-4ddd-850c-6738e4069b3f)
+
+)
 
